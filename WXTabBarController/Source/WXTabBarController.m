@@ -23,6 +23,7 @@
 
 #pragma mark - Lifecycle
 
+/// 在tabBar下放一个scrollView
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -37,6 +38,7 @@
     [self.view insertSubview:self.scrollView belowSubview:self.tabBar];
 }
 
+/// 隐藏导航栏
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
@@ -158,6 +160,7 @@
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame) * backingViewControllers.count, CGRectGetHeight(self.view.frame));
 }
 
+/// 返回tabbar上的UITabBarButton数组
 - (NSArray *)tabBarButtons {
     if (_tabBarButtons == nil) {
         NSMutableArray *tabBarButtons = [[NSMutableArray alloc] init];
